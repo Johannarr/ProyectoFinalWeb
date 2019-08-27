@@ -10,6 +10,7 @@ import proyectofinalweb.johanna.rodriguez.encapsulacion.Usuario;
 import proyectofinalweb.johanna.rodriguez.encapsulacion.enums.TipoExposicion;
 import proyectofinalweb.johanna.rodriguez.servicios.*;
 import spark.ModelAndView;
+import spark.Session;
 import spark.template.freemarker.FreeMarkerEngine;
 
 import java.time.Duration;
@@ -119,6 +120,16 @@ public class Rutas {
 
 
         get("/api/documentos", (request, response) -> documentoService.findAll(), JsonUtilidades.json());
+
+        get("/salir", (req, res) ->
+        {
+            Session sesion = req.session(true);
+            sesion.invalidate();
+
+            res.redirect("/");
+
+            return null;
+        });
 
         post("/crearDocumento", (request, response) -> {
 
