@@ -8,7 +8,7 @@ group 'proyectofinalweb.johanna.rodriguez'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
-mainClassName="parcial2web.johanna.rodriguez.Main"
+mainClassName="proyectofinalweb.johanna.rodriguez.Main"
 
 repositories {
     mavenCentral()
