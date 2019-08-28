@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="assets/css/noscript.css"/>
     </noscript>
     <title>Log In</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">
 
 </head>
 

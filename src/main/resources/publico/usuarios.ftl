@@ -9,7 +9,7 @@
     <noscript>
         <link rel="stylesheet" href="assets/css/noscript.css"/>
     </noscript>
-    <title>Inicio</title>
+    <title>Usuarios</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">
 </head>
@@ -26,15 +26,15 @@
     <nav id="nav" class="login">
         <ul class="links">
             <li class=""><a href="/">Inicio</a></li>
-            <li class="active"><a href="/top">Top pastes</a></li>
+            <li class=""><a href="/top">Top pastes</a></li>
             <#if usuario??>
                 <li class=""><a href="/historial">Historial</a></li>
                 <#if usuario.administrador>
-                    <li class=""><a href="/usuarios">Usuarios</a></li>
+                    <li class="active"><a href="/usuarios">Usuarios</a></li>
                 </#if>
-
             <#else>
                 <li class="login"><a href="/login">Log in</a></li>
+                <li class=""><a href="/registro">Registro</a></li>
 
             </#if>
 

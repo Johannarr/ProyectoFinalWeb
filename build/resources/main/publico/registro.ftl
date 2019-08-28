@@ -28,8 +28,16 @@
             <li><a href="/">Inicio</a></li>
             <li class=""><a href="/top">Top pastes</a></li>
 
-            <li class="login"><a href="/login">Log in</a></li>
-            <li class="active"><a href="/registro">Registro</a></li>
+            <#if usuario??>
+                <li class=""><a href="/historial">Historial</a></li>
+                <#if usuario.administrador>
+                    <li class=""><a href="/usuarios">Usuarios</a></li>
+                </#if>
+            <#else>
+                <li class="login"><a href="/login">Log in</a></li>
+                <li class=""><a href="/registro">Registro</a></li>
+            </#if>
+
         </ul>
     </nav>
 

@@ -34,6 +34,7 @@
                 </#if>
             <#else>
                 <li class="login"><a href="/login">Log in</a></li>
+                <li class=""><a href="/registro">Registro</a></li>
 
             </#if>
 

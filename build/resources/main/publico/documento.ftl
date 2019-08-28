@@ -50,7 +50,7 @@
                 <div class="col-6 col-12-small">
                     <div class="actions stacked">
                         <input type="text" id="direccion" readonly
-                               value="http://localhost:4567/documento/${documento.direccion}">
+                               value="http://app.itdom.me/documento/${documento.direccion}">
                     </div>
                 </div>
                 <div class="col-6 col-12-small">
