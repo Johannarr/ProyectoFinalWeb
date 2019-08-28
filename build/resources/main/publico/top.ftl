@@ -63,7 +63,7 @@
                             <td>${documento.nombre}</td>
                             <td>${documento.lenguaje.nombre}</td>
                             <td>${documento.visitas}</td>
-                            <td><a href="http://localhost:4567/documento/${documento.direccion}">Link</a></td>
+                            <td><a href="http://app.itdom.me/documento/${documento.direccion}">Link</a></td>
                         </tr>
                     </#list>
                     </tbody>
