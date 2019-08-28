@@ -121,12 +121,12 @@ public class Rutas {
 
         get("/api/documentos", (request, response) -> documentoService.findAll(), JsonUtilidades.json());
 
-        get("/salir", (req, res) ->
+        get("/salir", (request, response) ->
         {
-            Session sesion = req.session(true);
+            Session sesion = request.session(true);
             sesion.invalidate();
 
-            res.redirect("/");
+            response.redirect("/");
 
             return null;
         });
@@ -213,6 +213,8 @@ public class Rutas {
             return "OK";
         });
 
+
+
         post("/registro", (request, response) -> {
 
             String nombre = request.queryParams("nombre");
@@ -220,32 +222,16 @@ public class Rutas {
             String contra = request.queryParams("password");
 
 
+            long id = usuarioService.getInstancia().findAll().get(usuarioService.getInstancia().findAll().size() - 1).getId() + 1;
+
             Usuario usuario = new Usuario(user, nombre, contra, false);
-            usuarioService.crear(usuario);
-            usuarioSesion = usuario;
+            usuarioService.getInstancia().crear(usuario);
 
-            try {
-                request.session(true);
-                request.session().attribute("sesionUsuario", usuario);
+            response.redirect("/");
 
-                if (request.queryParams("guardarSesion") != null) {
-                    String sesionID = request.session().id();
-                    StrongTextEncryptor encriptador = new StrongTextEncryptor();
-                    encriptador.setPassword("final-web");
-                    String sesionIDEncriptado = encriptador.encrypt(sesionID);
+            return null;
 
-                    System.out.println("Sesión sin encriptar: " + sesionID);
-                    System.out.println("Sesión encriptada: " + sesionIDEncriptado);
 
-                    response.cookie("/", "sesionSemanal", sesionIDEncriptado, 604800, false);
-                }
-
-                response.redirect("/");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            return "OK";
         });
 
 

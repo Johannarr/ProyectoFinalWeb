@@ -30,12 +30,14 @@
 
             <#if usuario??>
                 <li class=""><a href="/historial">Historial</a></li>
+                <li class=""><a href="/salir">Salir</a></li>
                 <#if usuario.administrador>
                     <li class=""><a href="/usuarios">Usuarios</a></li>
                 </#if>
             <#else>
                 <li class="login"><a href="/login">Log in</a></li>
                 <li class=""><a href="/registro">Registro</a></li>
+
 
             </#if>
         </ul>
